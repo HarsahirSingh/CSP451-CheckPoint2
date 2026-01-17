@@ -31,3 +31,7 @@ export function getUserById(req, res) {
     name: userId === 1 ? "Alice" : "Bob",
   });
 }
+if (!user.name || user.name.trim() === "") {
+  res.status(400).json({ error: "User name is required" });
+  return;
+}
