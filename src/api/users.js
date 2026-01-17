@@ -4,10 +4,11 @@ export function getUsers(req, res) {
     { id: 2, name: "Bob" },
   ]);
 }
+
 export function createUser(req, res) {
   const user = req.body;
 
-  if (!user.name) {
+  if (!user.name || user.name.trim() === "") {
     res.status(400).json({ error: "User name is required" });
     return;
   }
@@ -30,8 +31,4 @@ export function getUserById(req, res) {
     id: userId,
     name: userId === 1 ? "Alice" : "Bob",
   });
-}
-if (!user.name || user.name.trim() === "") {
-  res.status(400).json({ error: "User name is required" });
-  return;
 }
