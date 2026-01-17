@@ -18,10 +18,14 @@ export function handleLogin(username, password) {
   const result = validateLogin(username, password);
 
   if (!result.valid) {
-    console.error(result.message);
+    console.error(formatAuthError(result.message));
     return false;
   }
 
   console.log(`User ${username} logged in successfully`);
   return true;
+}
+// Formats authentication error messages consistently
+export function formatAuthError(message) {
+  return `AUTH ERROR: ${message}`;
 }
