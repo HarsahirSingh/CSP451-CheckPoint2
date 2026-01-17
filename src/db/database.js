@@ -13,3 +13,13 @@ export function connectDatabase() {
     timestamp: new Date(),
   };
 }
+export function getDbStatus(connection) {
+  if (!connection || !connection.connected) {
+    return { status: "disconnected", timestamp: new Date() };
+  }
+
+  return {
+    status: "connected",
+    timestamp: connection.timestamp,
+  };
+}
