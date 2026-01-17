@@ -12,3 +12,16 @@ export function validateLogin(username, password) {
 
   return { valid: true, message: "Login validation passed." };
 }
+// Handles login submission logic
+
+export function handleLogin(username, password) {
+  const result = validateLogin(username, password);
+
+  if (!result.valid) {
+    console.error(result.message);
+    return false;
+  }
+
+  console.log(`User ${username} logged in successfully`);
+  return true;
+}
