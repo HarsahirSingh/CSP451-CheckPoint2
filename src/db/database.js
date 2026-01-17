@@ -23,3 +23,12 @@ export function getDbStatus(connection) {
     timestamp: connection.timestamp,
   };
 }
+export function disconnectDatabase(connection) {
+  if (!connection || !connection.connected) {
+    console.log("No database connection found.");
+    return false;
+  }
+
+  console.log("Database disconnected.");
+  return true;
+}
