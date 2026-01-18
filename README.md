@@ -44,3 +44,4 @@ npm run lint
 ```
 ## Feature: User Authentication
 This branch adds login authentication and token handling.(Second comment  to create conflict)
+This branch adds a login form with validation.(Start of Conflict)
